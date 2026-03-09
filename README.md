@@ -16,7 +16,8 @@ This repository is a teaching project where you refactor a Jupyter notebook into
     gh repo fork vivadata/diamonds
     git clone git@github.com:<your-username>/diamonds.git
     cd diamonds
-    git branch -b <your-username>-productioninizing-ml
+    # Create A new branch and switch to it
+    git checkout -b <your-username>-productioninizing-ml
     ```
 
 
@@ -25,7 +26,7 @@ This repository is a teaching project where you refactor a Jupyter notebook into
 1. Create a new virtual environment for this project.  
 
     ```bash
-    pyenv virtualenv 3.11.10 diamonds
+    pyenv virtualenv 3.11 diamonds
     ```
 
 
