@@ -18,4 +18,4 @@ models/
 # Mlflow
 mlruns/
 mlartifacts/
-mlflow.db
+mlflow.db__pycache__/
