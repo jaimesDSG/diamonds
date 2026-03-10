@@ -1,6 +1,9 @@
 import pandas as pd
-# Import other necessary libraries here
+import seaborn as sns
 
+def keep_not_null(row) :
+    if 0 in row.values : return False
+    return True
 
 def load_data(cache = True) -> pd.DataFrame:
     """
@@ -16,7 +19,7 @@ def load_data(cache = True) -> pd.DataFrame:
     pd.DataFrame
         The diamonds dataset
     """
-    pass
+    return sns.load_dataset("diamonds")
 
 def clean_data(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -32,7 +35,8 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
     pd.DataFrame
         The cleaned diamonds dataset
     """
-    pass
+    df_clean = df[df.apply(keep_not_null,axis=1)]
+    return df_clean
 
 def preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -64,7 +68,9 @@ def create_X_y(df: pd.DataFrame) ->tuple[pd.DataFrame, pd.Series]:
     (pd.DataFrame, pd.Series)
         The feature matrix X and target vector y
     """
-    pass
+    X = df.drop(columns=["price"])
+    y = df["price"]
+    return X, y
 
 
 
