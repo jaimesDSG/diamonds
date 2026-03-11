@@ -14,3 +14,7 @@ models/
 # Env
 .env
 .envrc
+
+# Python Cache
+__pycache__/
+*.pyc
